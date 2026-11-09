@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Projects | Bandit Bros</title>
+        <link rel="icon" type="image/x-icon" href="phase1cartoonfixed.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+        <link rel="stylesheet" href="style.css">
+
+        <script src="projects.js" defer></script>
+        <script src="navbar.js" defer></script>
+    </head>
+    <body>
+        <div id="navbar-placeholder"></div>
+        <main>
+            
+            <div class="hero-text">
+                <h1>Projects</h1>
+                <p>There's something for everyone here.</p>
+
+                <!-- Game buttons are generated from config.json -->
+                <div class="container" id="games-container"></div>
+            </div>
+
+            <!-- Game info panel (filled in by projects.js) -->
+            <dialog id="game-panel" class="game-panel">
+                <button class="close-button" id="close-game" aria-label="Close">&times;</button>
+
+                <img class="panel-image" id="panel-image" src="" alt="">
+                <h2 id="panel-title"></h2>
+                <p id="panel-description"></p>
+
+                <ul class="panel-details" id="panel-details"></ul>
+
+                <a class="play-button" id="panel-link" href="#"></a>
+            </dialog>
+
+        </main>
+        <footer> <!-- ok so this is like the bottom part with the links and stuff -->
+            <p>
+            &copy; 2026 Bandit Bros · All Rights Reserved<br></p>
+            <a href="mailto:bandit.bros173@gmail.com">Email Us</a><a href="https://discord.gg/23HteuNRgM">Discord</a>
+        </footer>
+    </body>
+
+</html>

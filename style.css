@@ -1,0 +1,289 @@
+:root{
+    --bg-color: rgb(36, 36, 36);
+    --navbar-background: rgb(2, 2, 2);
+    --textcolor: rgb(255, 255, 255);
+    /*
+    --bg-color: white;
+    --navbar-background: rgb(53, 53, 53);
+    --textcolor: rgb(0, 0, 0);
+    */
+}
+
+.darkmode{
+    --bg-color: rgb(36, 36, 36);
+    --navbar-background: rgb(2, 2, 2);
+    --textcolor: rgb(255, 255, 255);
+}
+body{
+    margin: 0px;
+    background-color: var(--bg-color);
+    color: var(--textcolor);
+}
+main{
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    align-items: fle;
+    gap: 20px;
+}
+.hero-text{
+    flex: 1;
+}
+.hero-video {
+    box-sizing: border-box;
+    padding: 10px;
+    flex: 1;
+    max-width: 800px;
+    border-radius: 8px;
+
+    /* Remove border-radius and overflow from here if they aren't working */
+}
+
+/* Target the actual video element inside your container */
+.hero-video video, 
+.hero-video iframe {
+
+    overflow: hidden;
+    display: block; /* Removes unwanted bottom spacing */
+    width: 100%;    /* Ensures it fills the padded area */
+    height: auto;
+}
+.navbar ul{
+    list-style-type: none;
+    background-color: var(--navbar-background);
+    padding: 0px;
+    margin: 0px;
+    display: flex;          /* replaces the floats */
+    align-items: stretch;   /* every li fills the bar's full height */
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+.navbar a:hover{
+    background-color: rgb(29, 29, 29);
+}
+
+.navbar li{
+    display: flex;          /* so the link inside can fill the li */
+    /* remove float: left; */
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+h1{
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+footer{
+    background-color: rgb(48, 48, 48);
+    color: aliceblue;
+    padding-top: 1px;
+    padding-bottom: 20px;
+}
+footer a {
+    color: rgb(255, 137, 137);
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+p {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+footer p {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+.theme-button{
+    height: auto;           /* was 50px, so it stretches with the bar */
+    min-height: 50px;
+    width: 50px;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.theme-button .material-symbols-outlined{
+    color: white
+}
+.navbar li:last-child{
+    margin-left: auto;      /* replaces float: right, pushes the theme button to the far right */
+}
+.theme-button:hover{
+    background-color: rgb(29, 29, 29);
+    cursor: pointer;
+}
+
+
+.game-button{
+    
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.15s ease;
+}
+.game-button:hover{
+    transform: scale(1.01);
+}
+.game-button img{
+    display: block;
+}
+
+.game-panel{
+    background-color: var(--bg-color);
+    color: var(--textcolor);
+    border: 1px solid rgb(70, 70, 70);
+    border-radius: 12px;
+    padding: 24px;
+    width: min(600px, 90vw);
+    max-height: 85vh;
+    overflow-y: auto;
+    font-family: "Open Sans", sans-serif;
+}
+.game-panel::backdrop{
+    background: rgba(0, 0, 0, 0.7);
+}
+.game-panel[open]{
+    animation: panel-in 0.2s ease;
+}
+@keyframes panel-in{
+    from{ opacity: 0; transform: translateY(15px); }
+    to{ opacity: 1; transform: translateY(0); }
+}
+
+.panel-image{
+    width: 100%;
+    border-radius: 8px;
+}
+.panel-details{
+    list-style: none;
+    padding: 0;
+}
+.panel-details li{
+    padding: 4px 0;
+}
+
+.close-button{
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    background: none;
+    border: none;
+    color: var(--textcolor);
+    font-size: 32px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-button:hover{
+    color: rgb(255, 137, 137);
+}
+
+.play-button{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 24px;
+    background-color: rgb(255, 137, 137);
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 6px;
+}
+.play-button:hover{
+    background-color: rgb(255, 165, 165);
+}
+
+.blog-section {
+    margin-top: 60px;
+    padding: 40px 20px 60px;
+    background-color: var(--bg-color);
+    color: var(--textcolor);
+    font-family: "Open Sans", sans-serif;
+}
+
+.blog-section h2 {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.blog-description {
+    margin-bottom: 30px;
+}
+
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.blog-card {
+    background-color: var(--navbar-background);
+    border: 1px solid rgb(70, 70, 70);
+    border-radius: 12px;
+    padding: 24px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-4px);
+    border-color: rgb(255, 137, 137);
+}
+
+.blog-date {
+    color: rgb(255, 137, 137);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.blog-card h3 {
+    margin-top: 12px;
+    font-size: 21px;
+}
+
+.blog-card p {
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.blog-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: rgb(255, 137, 137);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.blog-card a:hover {
+    text-decoration: underline;
+}
