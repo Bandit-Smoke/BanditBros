@@ -1,0 +1,36 @@
+{
+    "games": [
+        {
+            "id": "text-bob",
+            "title": "Text Bob",
+            "capsule": "images/textbobcapsule.png",
+            "panelImage": "images/textbobmaincapsule.png",
+            "description": "A first-person psychological horror game where you chat with an AI named Bob, make choices that shape his behavior, and fight for your life... because Bob does not understand boundaries.",
+            "details": {
+                "Platforms": "Steam",
+                "Genre": "Survival",
+                "Status": "Coming Soon"
+            },
+            "link": {
+                "label": "Wishlist On Steam",
+                "url": "#"
+            }
+        },
+        {
+            "id": "roblox-archives",
+            "title": "Roblox Archives",
+            "capsule": "images/roblox_archives_banner_one.png",
+            "panelImage": "images/roblox_archives_bandit_bros_website.png",
+            "description": "Archiving every corner of Roblox. Experience classic games like Natural Disaster Survival and collect tix to unlock classic items.",
+            "details": {
+                "Platforms": "Roblox",
+                "Genre": "Everything",
+                "Status": "Out! (16+)"
+            },
+            "link": {
+                "label": "Play On Roblox",
+                "url": "https://www.roblox.com/games/101017751707527/Roblox-Archives"
+            }
+        }
+    ]
+}
