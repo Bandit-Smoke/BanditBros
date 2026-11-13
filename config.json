@@ -32,5 +32,18 @@
                 "url": "https://www.roblox.com/games/101017751707527/Roblox-Archives"
             }
         }
+    ],
+    "posts": [
+        {
+            "id": "welcome-to-the-blog",
+            "title": "Welcome to the Bandit Bros Blog!",
+            "date": "2026-10-10",
+            "summary": "Stay up to date with our latest projects, game development progress, announcements, and more.",
+            "image": "images/BanditBrosPhaseWithText2.jpg",
+            "content": [
+                "Welcome to the Bandit Bros blog! This is where we will share <strong>updates</strong>, announcements, and behind-the-scenes looks at what we are building.",
+                "Keep an eye on this space for news about Text Bob, Roblox Archives, and everything else we have cooking!"
+            ]
+        }
     ]
 }

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
     <head>
         <meta charset="UTF-8">
         <title>Bandit Bros</title>
@@ -10,10 +9,12 @@
         
         <!-- Scripts -->
         <script src="script.js" defer></script>
-        <script src="navbar.js" defer></script>
+        <script src="blog.js" defer></script>
     </head>
     <body>
+        
         <div id="navbar-placeholder"></div>
+        <script src="navbar.js"></script>
         <main>
             <div class="hero-text">
                 <h1>We Make Games.</h1>
@@ -28,33 +29,17 @@
             <video class="hero-video" src="BanditBrosSplashPhase2v1.mp4" autoplay muted loop playsinline></video>
             
         </main>
-                <section class="blog-section">
+
+        <section class="blog-section" id="news">
             <h2>Latest News</h2>
             <p class="blog-description">Updates, announcements, and news from Bandit Bros.</p>
 
-            <div class="blog-container">
-                <article class="blog-card">
-                    <span class="blog-date">October 10, 2026</span>
-                    <h3>Welcome to the Bandit Bros Blog!</h3>
-                    <p>Stay up to date with our latest projects, game development progress, announcements, and more.</p>
-                    <a href="#">Read More →</a>
-                </article>
-
-                <article class="blog-card">
-                    <span class="blog-date">lalalala</span>
-                    <h3>lalalala</h3>
-                    <p>lalalala</p>
-                    <a href="#">Read More →</a>
-                </article>
-
-                <article class="blog-card">
-                    <span class="blog-date">lalalala</span>
-                    <h3>lalalala</h3>
-                    <p>lalalala</p>
-                    <a href="#">Read More →</a>
-                </article>
+            <!-- blog.js fills this in from the "posts" list in config.json -->
+            <div class="blog-container" id="blog-container">
+                <p class="blog-empty">Loading news...</p>
             </div>
         </section>
+
         <footer> <!-- ok so this is like the bottom part with the links and stuff -->
             <p>
             &copy; 2026 Bandit Bros · All Rights Reserved<br></p>       

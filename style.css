@@ -77,6 +77,18 @@ main{
     font-style: normal;
     font-variation-settings: "wdth" 100;
 }
+
+/* Clickable logo -> index.html (no padding / gray hover box like the text links) */
+.navbar .logo-link{
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+.navbar .logo-link:hover{
+    background-color: transparent;
+    opacity: 0.85;
+}
+
 h1{
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
@@ -286,4 +298,122 @@ footer p {
 
 .blog-card a:hover {
     text-decoration: underline;
+}
+
+/* No colors are set here, so it follows your existing light/dark mode. */
+
+.post-page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    display: block; /* in case main is styled as a flex/hero row elsewhere */
+}
+
+.post-back {
+    display: block;
+    width: fit-content;   /* keeps the hover underline just under the text */
+    margin-bottom: 24px;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.post-back:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* Date sits on its own line, below the back link */
+#post-container .blog-date {
+    display: block;
+}
+
+.post-title {
+    margin: 8px 0 24px;
+    line-height: 1.2;
+}
+
+.post-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 0 0 24px;
+}
+
+.post-body p {
+    line-height: 1.7;
+    margin: 0 0 1.2em;
+}
+
+.blog-empty {
+    opacity: 0.7;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* ===== Persistent navbar across page loads ===== */
+@view-transition {
+    navigation: auto;
+}
+
+.navbar {
+    view-transition-name: navbar;   /* navbar is lifted out and never fades */
+}
+
+::view-transition-old(root) {
+    animation: vt-fade-out 0.15s ease both;
+}
+::view-transition-new(root) {
+    animation: vt-fade-in 0.2s ease both;
+}
+@keyframes vt-fade-out { to   { opacity: 0; } }
+@keyframes vt-fade-in  { from { opacity: 0; } }
+
+/* ===== Staggered load-in ===== */
+@keyframes rise-in {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* "backwards" (not "both") so the animation doesn't lock the final transform
+   and break your hover scale/translate effects afterwards */
+main > :not(dialog),
+.blog-section,
+footer,
+.blog-card,
+.game-button {
+    animation: rise-in 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+
+/* Order: hero text -> video -> news -> footer */
+main > :nth-child(1) { animation-delay: 0.10s; }
+main > :nth-child(2) { animation-delay: 0.25s; }
+.blog-section        { animation-delay: 0.45s; }
+footer               { animation-delay: 0.60s; }
+
+/* JS-generated items cascade one by one */
+.blog-card:nth-child(1), .game-button:nth-child(1) { animation-delay: 0.55s; }
+.blog-card:nth-child(2), .game-button:nth-child(2) { animation-delay: 0.65s; }
+.blog-card:nth-child(3), .game-button:nth-child(3) { animation-delay: 0.75s; }
+.blog-card:nth-child(4), .game-button:nth-child(4) { animation-delay: 0.85s; }
+.blog-card:nth-child(n+5), .game-button:nth-child(n+5) { animation-delay: 0.95s; }
+
+/* Respect people who turn animations off */
+@media (prefers-reduced-motion: reduce) {
+    *, ::view-transition-old(root), ::view-transition-new(root) {
+        animation: none !important;
+    }
 }
